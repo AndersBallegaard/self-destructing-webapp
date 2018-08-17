@@ -3,6 +3,7 @@ from flask import Flask
 from datetime import datetime, timedelta
 from threading import Thread
 from os import system
+from random import randint
 
 last_load = datetime.now()
 
@@ -33,4 +34,4 @@ def life_line():
 if __name__ == "__main__":
     t = Thread(target=grim_reaper)
     t.start()
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=randint(1024,50000), debug=False)
